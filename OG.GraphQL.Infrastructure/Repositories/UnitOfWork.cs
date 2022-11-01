@@ -13,5 +13,8 @@ namespace OG.GraphQL.Infrastructure.Repositories
         public ICourseRepository CourseRepository => new CourseRepository(this._schoolDbContext);
 
         public IPersonRepository PersonRepository => new PersonRepository(this._schoolDbContext);
+
+        public async Task<int> Complete()
+            => await this._schoolDbContext.SaveChangesAsync();
     }
 }

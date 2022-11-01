@@ -4,5 +4,6 @@
     {
         ICourseRepository CourseRepository { get; }
         IPersonRepository PersonRepository { get; }
+        Task<int> Complete();
     }
 }

@@ -1,27 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>disable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="HotChocolate.AspNetCore" Version="12.15.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="HotChocolate.AspNetCore" Version="12.15.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\OG.GraphQL.Application\OG.GraphQL.Application.csproj" />
-    <ProjectReference Include="..\OG.GraphQL.Infrastructure\OG.GraphQL.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="GraphQL\Mutations\" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\OG.GraphQL.Application\OG.GraphQL.Application.csproj" />
+		<ProjectReference Include="..\OG.GraphQL.Infrastructure\OG.GraphQL.Infrastructure.csproj" />
+	</ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using OG.GraphQL.API.GraphQL.Mutations;
 using OG.GraphQL.API.GraphQL.Queries;
 using OG.GraphQL.Application;
 using OG.GraphQL.Infrastructure;
@@ -15,14 +15,16 @@ namespace OG.GraphQL.API
             services.AddGraphQLServer()
                 .AddQueryType()
                 .AddTypeExtension<CourseQuery>()
-                .AddTypeExtension<PersonQuery>();
+                .AddTypeExtension<PersonQuery>()
+                .AddMutationType()
+                .AddTypeExtension<PersonMutation>();
         }
 
         public static void Configure(this WebApplication app)
         {
             if (app.Environment.IsDevelopment())
             {
-               
+
             }
 
             app.UseHttpsRedirection();
