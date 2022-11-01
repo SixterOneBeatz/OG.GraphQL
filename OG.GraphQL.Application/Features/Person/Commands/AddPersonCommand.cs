@@ -9,7 +9,7 @@ namespace OG.GraphQL.Application.Features.Person.Commands
     {
         public AddPersonCommand(PersonDTO person)
             => this.Person = person;
-        public PersonDTO? Person { get; set; }
+        public PersonDTO Person { get; set; }
     }
 
     public class AddPersonCommandHandler : IRequestHandler<AddPersonCommand, int>

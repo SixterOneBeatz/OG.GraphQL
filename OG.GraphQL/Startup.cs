@@ -1,5 +1,6 @@
 ﻿using OG.GraphQL.API.GraphQL.Mutations;
 using OG.GraphQL.API.GraphQL.Queries;
+using OG.GraphQL.API.GraphQL.Subscriptions;
 using OG.GraphQL.Application;
 using OG.GraphQL.Infrastructure;
 
@@ -12,24 +13,24 @@ namespace OG.GraphQL.API
             services.AddControllers();
             services.AddInfrastructure(configuration);
             services.AddApplication();
+            services.AddInMemorySubscriptions();
             services.AddGraphQLServer()
                 .AddQueryType()
                 .AddTypeExtension<CourseQuery>()
                 .AddTypeExtension<PersonQuery>()
                 .AddMutationType()
-                .AddTypeExtension<PersonMutation>();
+                .AddTypeExtension<PersonMutation>()
+                .AddSubscriptionType()
+                .AddTypeExtension<PersonSubscription>();
         }
 
         public static void Configure(this WebApplication app)
         {
-            if (app.Environment.IsDevelopment())
-            {
-
-            }
-
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
+            app.UseWebSockets();
 
             app.MapControllers();
 
